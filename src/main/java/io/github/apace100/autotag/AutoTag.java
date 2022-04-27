@@ -4,16 +4,10 @@ import io.github.apace100.autotag.tags.AutoBiomeTags;
 import io.github.apace100.autotag.tags.AutoBlockTags;
 import io.github.apace100.autotag.tags.AutoItemTags;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityFeatureRenderEvents;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
-import net.fabricmc.fabric.api.mininglevel.v1.FabricMineableTags;
-import net.minecraft.item.*;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 
