@@ -6,7 +6,6 @@ import com.mojang.serialization.Lifecycle;
 import io.github.apace100.autotag.AutoTag;
 import io.github.apace100.autotag.AutoTagRegistry;
 import net.minecraft.tag.TagKey;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

@@ -3,8 +3,8 @@ package io.github.apace100.autotag;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import org.apache.commons.compress.utils.Lists;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,13 +18,13 @@ public class AutoTagRegistry {
      * Retrieves all registered "auto tags" for a certain registry.
      * @param registry The registry to retrieve auto tags for
      * @param <T> The entry type
-     * @return
+     * @return A list of all auto tags registered for this registry
      */
     public static <T> List<AutoTag<?>> getAutoTags(Registry<T> registry) {
         if(AUTO_TAGS.containsKey(registry)) {
             return AUTO_TAGS.get(registry);
         } else {
-            return Lists.newArrayList();
+            return new ArrayList<>();
         }
     }
 
