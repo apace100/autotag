@@ -1,6 +1,6 @@
 # AutoTag
 
-AutoTag is a Fabric mod which automatically detects populates common tags with entries that fulfill specific conditions.
+AutoTag is a Fabric mod which automatically populates common tags with entries that fulfill specific conditions.
 The goal is to create easier inter-mod compatibility, since not all mod developers remember to add their content to common tags.
 If you're a mod pack creator or a developer and you have any suggestions for new auto tags, feel free to create an issue on the issue tracker.
 
