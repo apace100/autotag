@@ -4,6 +4,13 @@ AutoTag is a Fabric mod which automatically populates common tags with entries t
 The goal is to create easier inter-mod compatibility, since not all mod developers remember to add their content to common tags.
 If you're a mod pack creator or a developer and you have any suggestions for new auto tags, feel free to create an issue on the issue tracker.
 
+## Integrations
+AutoTag adds specific integrations for the following mods:
+
+| Mod                                                                   | Description of the integration                      | Version introduced |
+|:----------------------------------------------------------------------|:----------------------------------------------------|-------------------:|
+| [FabricShieldLib](https://github.com/CrimsonDawn45/Fabric-Shield-Lib) | All custom shields are added to `c:shields` as well |              1.1.0 |
+
 ## Client vs Server
 Clients receive their tag list from the server, thus when you install this mod on a server, the clients will receive the same (already automatically populated) tags upon joining the world.
 However, if the tags are supposed to be automatically populated in a single-player environment, the client of course needs to have this mod installed.
@@ -45,36 +52,49 @@ To prevent the item `minecraft:carved_pumpkin` from being added to ANY tags auto
 
 ### Items
 
-| Tag ID                | Condition                                                  |
-|:----------------------|:-----------------------------------------------------------|
-| `c:tools`             | Item class extends `ToolItem`                              |
-| `c:pickaxes`          | Item class extends `PickaxeItem`                           |
-| `c:axes`              | Item class extends `AxeItem`                               |
-| `c:shovels`           | Item class extends `ShovelItem`                            |
-| `c:hoes`              | Item class extends `HoeItem`                               |
-| `c:swords`            | Item class extends `SwordItem`                             |
-| `c:armor`             | Item class extends `ArmorItem`                             |
-| `c:helmets`           | Item class extends `ArmorItem` and is for the `HEAD` slot  |
-| `c:chestplates`       | Item class extends `ArmorItem` and is for the `CHEST` slot |
-| `c:leggings`          | Item class extends `ArmorItem` and is for the `LEGS` slot  |
-| `c:boots`             | Item class extends `ArmorItem` and is for the `FEET` slot  |
-| `c:head_equippables`  | Item can be equipped in the `HEAD` slot                    |
-| `c:chest_equippables` | Item can be equipped in the `CHEST` slot                   |
-| `c:legs_equippables`  | Item can be equipped in the `LEGS` slot                    |
-| `c:feet_equippables`  | Item can be equipped in the `FEET` slot                    |
-| `c:ores`              | Item represents a block that extends `OreBlock`            |
-| `c:skulls`            | Item represents a block that extends `AbstractSkullBlock`  |
-| `c:block_items`       | Item class extends `BlockItem` (i.e. is placeable)         |
+| Tag ID                | Condition                                                                                         | Version introduced |
+|:----------------------|:--------------------------------------------------------------------------------------------------|-------------------:|
+| `c:tools`             | Item class extends `ToolItem`                                                                     |              1.0.0 |
+| `c:mining_tools`      | Item class extends `MiningToolItem`                                                               |              1.1.0 |
+| `c:pickaxes`          | Item class extends `PickaxeItem`                                                                  |              1.0.0 |
+| `c:axes`              | Item class extends `AxeItem`                                                                      |              1.0.0 |
+| `c:shovels`           | Item class extends `ShovelItem`                                                                   |              1.0.0 |
+| `c:hoes`              | Item class extends `HoeItem`                                                                      |              1.0.0 |
+| `c:shields`           | Item class extends `ShieldItem` or implements `FabricShield` if FabricShieldLib is installed      |              1.1.0 |
+| `c:weapons`           | Item class extends `SwordItem`, `RangedWeaponItem` or `TridentItem`                               |              1.1.0 |
+| `c:melee_weapons`     | Item class extends `SwordItem` or `TridentItem`                                                   |              1.1.0 |
+| `c:ranged_weapons`    | Item class extends `RangedWeaponItem` or `TridentItem`                                            |              1.1.0 |
+| `c:swords`            | Item class extends `SwordItem`                                                                    |              1.0.0 |
+| `c:tridents`          | Item class extends `TridentItem`                                                                  |              1.1.0 |
+| `c:bows`              | Item class extends `BowItem`                                                                      |              1.1.0 |
+| `c:crossbows`         | Item class extends `CrossbowItem`                                                                 |              1.1.0 |
+| `c:armor`             | Item class extends `ArmorItem`                                                                    |              1.0.0 |
+| `c:helmets`           | Item class extends `ArmorItem` and is for the `HEAD` slot                                         |              1.0.0 |
+| `c:chestplates`       | Item class extends `ArmorItem` and is for the `CHEST` slot                                        |              1.0.0 |
+| `c:leggings`          | Item class extends `ArmorItem` and is for the `LEGS` slot                                         |              1.0.0 |
+| `c:boots`             | Item class extends `ArmorItem` and is for the `FEET` slot                                         |              1.0.0 |
+| `c:head_equippables`  | Item can be equipped in the `HEAD` slot                                                           |              1.0.0 |
+| `c:chest_equippables` | Item can be equipped in the `CHEST` slot                                                          |              1.0.0 |
+| `c:legs_equippables`  | Item can be equipped in the `LEGS` slot                                                           |              1.0.0 |
+| `c:feet_equippables`  | Item can be equipped in the `FEET` slot                                                           |              1.0.0 |
+| `c:ores`              | Item represents a block that extends `OreBlock`                                                   |              1.0.0 |
+| `c:skulls`            | Item represents a block that extends `AbstractSkullBlock`                                         |              1.0.0 |
+| `c:block_items`       | Item class extends `BlockItem` (i.e. is placeable)                                                |              1.0.0 |
+| `c:food`              | Item class has a `FoodComponent`                                                                  |              1.1.0 |
+| `c:snacks`            | Item class has a `FoodComponent` and is marked as a "snack" (consumption time halved)             |              1.1.0 |
+| `c:food_with_effects` | Item class has a `FoodComponent` and has the possibility of inflicting one or more status effects |              1.1.0 |
+| `c:drinks`            | Item has `DRINK` assigned as its use action                                                       |              1.1.0 |
+| `c:potions`           | Item class extends `PotionItem`                                                                   |              1.1.0 |
 
 ### Blocks
-| Tag ID              | Condition                                |
-|:--------------------|:-----------------------------------------|
-| `c:ores`            | Block class extends `OreBlock`           |
-| `c:skulls`          | Block class extends `AbstractSkullBlock` |
+| Tag ID              | Condition                                | Version introduced |
+|:--------------------|:-----------------------------------------|:-------------------|
+| `c:ores`            | Block class extends `OreBlock`           | 1.0.0              |
+| `c:skulls`          | Block class extends `AbstractSkullBlock` | 1.0.0              |
 
 ### Biomes
-| Tag ID                 | Condition                                |
-|:-----------------------|:-----------------------------------------|
-| `c:precipitation_none` | The biome's precipitation type is `NONE` |
-| `c:precipitation_rain` | The biome's precipitation type is `RAIN` |
-| `c:precipitation_snow` | The biome's precipitation type is `SNOW` |
+| Tag ID                 | Condition                                | Version introduced |
+|:-----------------------|:-----------------------------------------|:-------------------|
+| `c:precipitation_none` | The biome's precipitation type is `NONE` | 1.0.0              |
+| `c:precipitation_rain` | The biome's precipitation type is `RAIN` | 1.0.0              |
+| `c:precipitation_snow` | The biome's precipitation type is `SNOW` | 1.0.0              |

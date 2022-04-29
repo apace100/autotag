@@ -1,9 +1,11 @@
 package io.github.apace100.autotag;
 
+import io.github.apace100.autotag.compat.FabricShieldLibCompat;
 import io.github.apace100.autotag.tags.AutoBiomeTags;
 import io.github.apace100.autotag.tags.AutoBlockTags;
 import io.github.apace100.autotag.tags.AutoItemTags;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -22,6 +24,9 @@ public class AutoTag implements ModInitializer {
 		AutoItemTags.register();
 		AutoBlockTags.register();
 		AutoBiomeTags.register();
+		if(FabricLoader.getInstance().isModLoaded("fabricshieldlib")) {
+			FabricShieldLibCompat.register();
+		}
 	}
 
 	@SuppressWarnings("unchecked")
