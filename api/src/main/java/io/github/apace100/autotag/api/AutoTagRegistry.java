@@ -1,4 +1,4 @@
-package io.github.apace100.autotag;
+package io.github.apace100.autotag.api;
 
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
@@ -51,7 +51,7 @@ public class AutoTagRegistry {
     }
 
     private static Identifier getPreventIdentifier(Identifier identifier) {
-        return new Identifier(io.github.apace100.autotag.AutoTag.MODID,
+        return new Identifier(io.github.apace100.autotag.impl.AutoTag.MODID,
             "prevent/" + identifier.getNamespace() + "/" + identifier.getPath());
     }
 

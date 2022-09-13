@@ -1,9 +1,10 @@
-package io.github.apace100.autotag.tags;
+package io.github.apace100.autotag.common.tags;
 
-import io.github.apace100.autotag.AutoTagRegistry;
-import io.github.apace100.autotag.TagIdentifiers;
+import io.github.apace100.autotag.api.AutoTagRegistry;
+import io.github.apace100.autotag.common.TagIdentifiers;
 import net.minecraft.block.AbstractSkullBlock;
 import net.minecraft.block.OreBlock;
+import net.minecraft.block.RedstoneOreBlock;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.item.*;
@@ -142,7 +143,7 @@ public final class AutoItemTags {
         AutoTagRegistry.register(
             Registry.ITEM,
             TagKey.of(Registry.ITEM_KEY, TagIdentifiers.ORES),
-            item -> item instanceof BlockItem && ((BlockItem) item).getBlock() instanceof OreBlock);
+            item -> item instanceof BlockItem blockItem && (blockItem.getBlock() instanceof OreBlock || blockItem.getBlock() instanceof RedstoneOreBlock));
         AutoTagRegistry.register(
             Registry.ITEM,
             TagKey.of(Registry.ITEM_KEY, TagIdentifiers.SKULLS),

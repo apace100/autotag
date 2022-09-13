@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "id": "autotag-convention",
+  "id": "autotag",
   "version": "${version}",
 
-  "name": "AutoTag Convention",
-  "description": "Automatically fills some convention tags using AutoTag API.",
+  "name": "AutoTag",
+  "description": "Provides an API to automatically fill tag entries.",
   "authors": [
     "Apace"
   ],
@@ -14,15 +14,20 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "io.github.apace100.autotag.common.AutoTagConvention"
-    ]
   },
+  
+  "mixins": [
+    "autotag.mixins.json"
+  ],
 
   "depends": {
     "fabricloader": ">=0.13.3",
     "minecraft": ">=1.19",
-    "java": ">=17",
-    "autotag": "*"
+    "java": ">=17"
+  },
+  "custom": {
+    "modmenu": {
+      "badges": [ "library" ]
+    }
   }
 }
