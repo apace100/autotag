@@ -1,0 +1,55 @@
+version = project.mod_version
+group = project.maven_group
+
+dependencies {
+    // To change the versions see the gradle.properties file
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    // Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
+    it.options.release = 17
+}
+
+configurations {
+    // The reason for this `dev` configuration has been lost to time.
+    // If you happen to figure out why extension is needed, or a way to eliminate it, please tell us.
+    dev
+}
+
+afterEvaluate {
+    artifacts {
+        dev file: file("$buildDir/devlibs/$archivesBaseName-$version-dev.jar"), type: "jar", builtBy: jar
+    }
+
+    // This is inside the afterEvaluate block because the version is set by the qslModule extension, which is not
+    // complete until project evaluation has finished.
+}
+
+loom {
+    shareCaches()
+}
+
+java {
+    // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+    // if it is present.
+    // If you remove this line, sources will not be generated.
+    withSourcesJar()
+}
+
+jar {
+    archiveClassifier.set "dev"
+    from("LICENSE") {
+        rename { "${it}_${project.archivesBaseName}" }
+    }
+}

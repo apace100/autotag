@@ -1,8 +1,8 @@
-package io.github.apace100.autotag.compat;
+package io.github.apace100.autotag.common.compat;
 
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricShield;
-import io.github.apace100.autotag.AutoTagRegistry;
-import io.github.apace100.autotag.TagIdentifiers;
+import io.github.apace100.autotag.api.AutoTagRegistry;
+import io.github.apace100.autotag.common.TagIdentifiers;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.registry.Registry;
 

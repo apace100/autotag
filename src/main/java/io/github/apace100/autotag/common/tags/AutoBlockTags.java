@@ -1,7 +1,7 @@
-package io.github.apace100.autotag.tags;
+package io.github.apace100.autotag.common.tags;
 
-import io.github.apace100.autotag.AutoTagRegistry;
-import io.github.apace100.autotag.TagIdentifiers;
+import io.github.apace100.autotag.api.AutoTagRegistry;
+import io.github.apace100.autotag.common.TagIdentifiers;
 import net.minecraft.block.AbstractSkullBlock;
 import net.minecraft.block.OreBlock;
 import net.minecraft.tag.TagKey;

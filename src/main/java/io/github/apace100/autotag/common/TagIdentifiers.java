@@ -1,4 +1,4 @@
-package io.github.apace100.autotag;
+package io.github.apace100.autotag.common;
 
 import net.minecraft.util.Identifier;
 
