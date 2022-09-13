@@ -56,11 +56,17 @@ To prevent the item `minecraft:carved_pumpkin` from being added to ANY tags auto
 
 ## Using the API (for developers)
 
-:warning: Autotag is not currently published on any maven repository.
-
 Bring in the API as a dependency:
 
 ```groovy
+
+repositories {
+    maven {
+        name "Will BL Releases"
+        url "https://maven.willbl.dev/releases"
+    }
+}
+
 dependencies {
     implementation include("com.github.apace100:autotag-api:${autotag_version}")
 }
