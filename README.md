@@ -4,6 +4,12 @@ AutoTag is a Fabric mod which automatically populates common tags with entries t
 The goal is to create easier inter-mod compatibility, since not all mod developers remember to add their content to common tags.
 If you're a mod pack creator or a developer and you have any suggestions for new auto tags, feel free to create an issue on the issue tracker.
 
+## Modules
+
+Beginning with 2.0.0+1.19, AutoTag is split into two modules:
+ - AutoTag API (mod ID `autotag`, maven artifact `autotag-api`), which provides the API for populating tags.
+ - AutoTag Convention (mod ID `autotag-convention`, maven artifact `autotag`), which uses AutoTag API to auto-fill some [convention tags](https://github.com/FabricMC/fabric/tree/1.19.2/fabric-convention-tags-v1).
+
 ## Integrations
 AutoTag adds specific integrations for the following mods:
 
@@ -45,6 +51,33 @@ To prevent the item `minecraft:carved_pumpkin` from being added to ANY tags auto
   "values": [
     "minecraft:carved_pumpkin"
   ]
+}
+```
+
+## Using the API (for developers)
+
+:warning: Autotag is not currently published on any maven repository.
+
+Bring in the API as a dependency:
+
+```groovy
+dependencies {
+    implementation include("com.github.apace100:autotag-api:${autotag_version}")
+}
+```
+
+Then register your autotags:
+
+```java
+class MyMod implements ModInitializer {
+    @Override
+    public void onInitialize() {
+        AutoTagRegistry.register(
+                Registry.BLOCK,  // The Registry for the tag
+                TagKey.of(Registry.BLOCK_KEY, new Identifier("mymod:cakes")), // The TagKey for the tag
+                block -> block instanceof CakeBlock // A predicate to determine if a registry object belongs in the tag
+        );
+    }
 }
 ```
 
