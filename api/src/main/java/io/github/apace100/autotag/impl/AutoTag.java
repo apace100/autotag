@@ -1,6 +1,5 @@
-package io.github.apace100.autotag.api;
+package io.github.apace100.autotag.impl;
 
-import net.fabricmc.api.ModInitializer;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -8,7 +7,7 @@ import net.minecraft.util.registry.RegistryKey;
 
 import java.util.HashMap;
 
-public class AutoTagApi {
+public class AutoTag {
     private static final HashMap<RegistryKey<?>, TagKey<?>> UNIVERSAL_PREVENT_TAGS_CACHE = new HashMap<>();
     public static String MODID = "autotag";
 

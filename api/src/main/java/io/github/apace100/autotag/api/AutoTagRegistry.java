@@ -51,7 +51,7 @@ public class AutoTagRegistry {
     }
 
     private static Identifier getPreventIdentifier(Identifier identifier) {
-        return new Identifier(AutoTagApi.MODID,
+        return new Identifier(io.github.apace100.autotag.impl.AutoTag.MODID,
             "prevent/" + identifier.getNamespace() + "/" + identifier.getPath());
     }
 
