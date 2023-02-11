@@ -2,11 +2,12 @@ package io.github.apace100.autotag.mixin;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.mojang.serialization.Lifecycle;
 import io.github.apace100.autotag.api.AutoTagRegistry;
 import io.github.apace100.autotag.impl.AutoTag;
-import net.minecraft.tag.TagKey;
-import net.minecraft.util.registry.*;
+import net.minecraft.registry.MutableRegistry;
+import net.minecraft.registry.SimpleRegistry;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.registry.tag.TagKey;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -15,11 +16,7 @@ import java.util.*;
 import java.util.function.Predicate;
 
 @Mixin(SimpleRegistry.class)
-public abstract class SimpleRegistryMixin<T> extends MutableRegistry<T> {
-
-    public SimpleRegistryMixin(RegistryKey<? extends Registry<T>> registryKey, Lifecycle lifecycle) {
-        super(registryKey, lifecycle);
-    }
+public abstract class SimpleRegistryMixin<T> implements MutableRegistry<T> {
 
     @SuppressWarnings("unchecked")
     @ModifyVariable(method = "populateTags", at = @At("HEAD"), argsOnly = true)

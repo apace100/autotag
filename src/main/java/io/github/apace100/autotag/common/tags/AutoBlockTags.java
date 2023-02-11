@@ -3,19 +3,20 @@ package io.github.apace100.autotag.common.tags;
 import io.github.apace100.autotag.api.AutoTagRegistry;
 import io.github.apace100.autotag.common.TagIdentifiers;
 import net.minecraft.block.AbstractSkullBlock;
-import net.minecraft.block.OreBlock;
+import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.block.RedstoneOreBlock;
-import net.minecraft.tag.TagKey;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 
 public final class AutoBlockTags {
 
     public static void register() {
-        AutoTagRegistry.register(Registry.BLOCK,
-            TagKey.of(Registry.BLOCK_KEY, TagIdentifiers.ORES),
-            block -> block instanceof OreBlock || block instanceof RedstoneOreBlock);
-        AutoTagRegistry.register(Registry.BLOCK,
-            TagKey.of(Registry.BLOCK_KEY, TagIdentifiers.SKULLS),
+        AutoTagRegistry.register(Registries.BLOCK,
+            TagKey.of(RegistryKeys.BLOCK, TagIdentifiers.ORES),
+            block -> block instanceof ExperienceDroppingBlock || block instanceof RedstoneOreBlock);
+        AutoTagRegistry.register(Registries.BLOCK,
+            TagKey.of(RegistryKeys.BLOCK, TagIdentifiers.SKULLS),
             block -> block instanceof AbstractSkullBlock);
     }
 }
