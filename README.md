@@ -137,25 +137,3 @@ class MyMod implements ModInitializer {
 | `c:precipitation_none` | The biome's precipitation type is `NONE` | 1.0.0              |
 | `c:precipitation_rain` | The biome's precipitation type is `RAIN` | 1.0.0              |
 | `c:precipitation_snow` | The biome's precipitation type is `SNOW` | 1.0.0              |
-
-### Entity Types
-| Tag ID          | Condition                                                           | Version introduced |
-|:----------------|:--------------------------------------------------------------------|:-------------------|
-| `c:living`      | Entity class extends `LivingEntity`                                 | 2.0.1              |
-| `c:alive`       | Entity class extends `LivingEntity`, excluding armor stands         | 2.0.1              |
-| `c:objects`     | Entity class does not extend `LivingEntity`, including armor stands | 2.0.1              |
-| `c:projectiles` | Entity class extends `ProjectileEntity`                             | 2.0.1              |
-| `c:boats`       | Entity class extends `BoatEntity`                                   | 2.0.1              |
-| `c:minecarts`   | Entity class extends `MinecartEntity`                               | 2.0.1              |
-| `c:tameable`    | Entity class extends `TameableEntity`                               | 2.0.1              |
-| `c:aquatic`     | Entity class extends `WaterCreatureEntity` or `GuardianEntity`      | 2.0.1              |
-| `c:animals`     | Entity class extends `AnimalEntity`                                 | 2.0.1              |
-| `c:horses`      | Entity class extends `AbstractHorseEntity`                          | 2.0.1              |
-| `c:cows`        | Entity class extends `CowEntity`                                    | 2.0.1              |
-| `c:hostile`     | Entity class extends `HostileEntity`                                | 2.0.1              |
-| `c:zombies`     | Entity class extends `ZombieEntity`                                 | 2.0.1              |
-| `c:skeletons`   | Entity class extends `AbstractSkeletonEntity`                       | 2.0.1              |
-| `c:raiders`     | Entity class extends `RaiderEntity`                                 | 2.0.1              |
-| `c:slimes`      | Entity class extends `SlimeEntity`                                  | 2.0.1              |
-| `c:piglins`     | Entity class extends `AbstractPiglinEntity`                         | 2.0.1              |
-| `c:golems`      | Entity class extends `GolemEntity`                                  | 2.0.1              |
