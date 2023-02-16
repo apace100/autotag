@@ -12,7 +12,7 @@ public final class FabricShieldLibCompat {
     public static void register() {
         AutoTagRegistry.register(
             Registries.ITEM,
-            TagKey.of(RegistryKeys.ITEM, TagIdentifiers.SHIELDS),
+            TagKey.of(RegistryKeys.ITEM, TagIdentifiers.Items.SHIELDS),
             item -> item instanceof FabricShield);
     }
 }

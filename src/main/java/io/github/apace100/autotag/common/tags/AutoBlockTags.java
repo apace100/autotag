@@ -13,10 +13,10 @@ public final class AutoBlockTags {
 
     public static void register() {
         AutoTagRegistry.register(Registries.BLOCK,
-            TagKey.of(RegistryKeys.BLOCK, TagIdentifiers.ORES),
+            TagKey.of(RegistryKeys.BLOCK, TagIdentifiers.Blocks.ORES),
             block -> block instanceof ExperienceDroppingBlock || block instanceof RedstoneOreBlock);
         AutoTagRegistry.register(Registries.BLOCK,
-            TagKey.of(RegistryKeys.BLOCK, TagIdentifiers.SKULLS),
+            TagKey.of(RegistryKeys.BLOCK, TagIdentifiers.Blocks.SKULLS),
             block -> block instanceof AbstractSkullBlock);
     }
 }
