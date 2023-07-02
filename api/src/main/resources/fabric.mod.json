@@ -6,7 +6,8 @@
   "name": "AutoTag",
   "description": "Provides an API to automatically fill tag entries.",
   "authors": [
-    "Apace"
+    "Apace",
+    "Will BL"
   ],
 
   "license": "MIT",

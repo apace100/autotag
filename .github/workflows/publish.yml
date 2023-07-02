@@ -1,0 +1,26 @@
+# Publishes the mod from a GitHub release to CurseForge and Modrinth.
+
+name: publish
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Determine release version from tag
+        id: mod-release-version
+        run: |
+          echo "MOD_RELEASE_VERSION=`echo '${{ github.event.release.tag_name }}' | sed -r 's/^v?(.*)/\1/'`" >> "$GITHUB_OUTPUT"
+      - name: Download assets from release
+        run: gh release download ${{ github.event.release.tag }} --repo ${{ github.repository }} --pattern '*.jar' --dir 'build/libs/'
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Publish the mod
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          version: ${{ steps.mod-release-version.outputs.MOD_RELEASE_VERSION }}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}

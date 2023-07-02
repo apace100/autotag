@@ -6,7 +6,8 @@
   "name": "AutoTag Convention",
   "description": "Automatically fills some convention tags using AutoTag API.",
   "authors": [
-    "Apace"
+    "Apace",
+    "Will BL"
   ],
 
   "license": "MIT",
@@ -21,8 +22,19 @@
 
   "depends": {
     "fabricloader": ">=0.13.3",
-    "minecraft": ">=1.19",
+    "minecraft": "1.19.4",
     "java": ">=17",
     "autotag": "*"
+  },
+
+  "custom": {
+    "mc-publish": {
+      "modrinth": "8FdYDHF5",
+      "curseforge": "618433",
+      "loaders": ["fabric"],
+      "dependencies": [
+        "autotag(embedded)#(ignore:modrinth,curseforge,github)"
+      ]
+    }
   }
 }
