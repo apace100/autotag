@@ -71,32 +71,6 @@ allprojects {
 
 archivesBaseName = project.archives_base_name
 
-repositories {
-    mavenCentral()
-    maven {
-        url "https://jitpack.io"
-    }
-    maven {
-        url "https://maven.terraformersmc.com/"
-    }
-    maven {
-        url "https://maven.shedaniel.me/"
-    }
-    exclusiveContent {
-        forRepository {
-            maven {
-                name = "Modrinth"
-                url = "https://api.modrinth.com/maven"
-            }
-        }
-        filter {
-            includeGroup "maven.modrinth"
-        }
-    }
-}
-
 dependencies {
     implementation include(project(path: ":api", configuration: "namedElements"))
-
-    modImplementation "com.github.CrimsonDawn45:Fabric-Shield-Lib:${project.fabric_shield_lib_version}"
 }
