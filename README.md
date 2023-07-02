@@ -132,8 +132,8 @@ class MyMod implements ModInitializer {
 | `c:skulls`          | Block class extends `AbstractSkullBlock` | 1.0.0              |
 
 ### Biomes
-| Tag ID                 | Condition                                | Version introduced |
-|:-----------------------|:-----------------------------------------|:-------------------|
-| `c:precipitation_none` | The biome's precipitation type is `NONE` | 1.0.0              |
-| `c:precipitation_rain` | The biome's precipitation type is `RAIN` | 1.0.0              |
-| `c:precipitation_snow` | The biome's precipitation type is `SNOW` | 1.0.0              |
+| Tag ID                 | Condition                                             | Version introduced |
+|:-----------------------|:------------------------------------------------------|:-------------------|
+| `c:precipitation_none` | The biome's precipitation type is `NONE` at pos 0,0,0 | 1.0.0              |
+| `c:precipitation_rain` | The biome's precipitation type is `RAIN` at pos 0,0,0 | 1.0.0              |
+| `c:precipitation_snow` | The biome's precipitation type is `SNOW` at pos 0,0,0 | 1.0.0              |
